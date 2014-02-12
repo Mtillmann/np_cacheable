@@ -11,7 +11,7 @@ np_cacheable uses the TYPO3 caching framework so you can expect a considerable s
 "uncached" extbase controller actions even if you only have MySQL available as CF backend.
 
 It works by overriding `\TYPO3\CMS\Extbase\Mvc\Controller\ActionController::callActionMethod`
-an check whether the action that is about to be called has the `@cacheable` annotation.
+and check whether the action that is about to be called has the `@cacheable` annotation.
 
 ###Usage
 To enable the caching you have to install the extension, then make `\NetworkPublishingGmbH\NpCacheable\Controller\CacheableController`
