@@ -66,7 +66,7 @@ class CacheableController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
 			$preparedArguments[] = $argument->getValue();
 		}
 
-		$key = md5(__METHOD__.var_export($preparedArguments,true));
+		$key = md5(get_class($this).$this->actionMethodName.var_export($preparedArguments,true).var_export($_REQUEST,true));
 		if( $GLOBALS['typo3CacheManager']->getCache($this->cacheKey)->has($key) ){
 			return $this->response->appendContent(
 				$GLOBALS['typo3CacheManager']->getCache($this->cacheKey)->get($key)
